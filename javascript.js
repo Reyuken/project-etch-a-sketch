@@ -23,24 +23,36 @@ document.addEventListener("DOMContentLoaded", () => {
         return `rgb(${red}, ${green}, ${blue})`;
     }
     const container = document.querySelector(".container");
-
     const inputNumber = document.createElement("div");
     container.append(inputNumber);
     inputNumber.setAttribute("class", "inputNumber");
 
-    const inputBox = document.createElement("input");
-    inputBox.type = Text;
-    inputBox.placeholder = "Enter a value between 1 to 100.....";
-    inputNumber.append(inputBox);
 
     const containerGrid = document.createElement("div");
     container.append(containerGrid);
     containerGrid.setAttribute("class", "containerGrid");
 
+    const inputBox = document.createElement("input");
+    inputBox.type = "text";
+    inputBox.min = 1;
+    inputBox.max = 100;
+    inputBox.id = "inputSave";
+    inputBox.placeholder = "Enter a value between 1 to 100.....";
+    inputNumber.append(inputBox);
+
+    const generateButton = document.createElement("Button");
+    generateButton.innerText = "Generate";
+    inputNumber.append(generateButton);
+    generateButton.addEventListener("click",saveInput);
+
+    function saveInput(){
+        const input = document.getElementById("inputSave").value; 
+        return console.log(input);
+    }
 
     createGrid(2);
 
-
+   
 
 })
 
