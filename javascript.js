@@ -63,9 +63,14 @@ document.addEventListener("DOMContentLoaded", () => {
     container.append(inputNumber);
     inputNumber.setAttribute("class", "inputNumber");
 
-    //creates containerGrid div under container div
+    //creates borderGrid div under container div
+    const borderGrid = document.createElement("div");
+    container.append(borderGrid);
+    borderGrid.setAttribute("class", "borderGrid");
+
+    //creates containerGrid div under borderGrid div
     const containerGrid = document.createElement("div");
-    container.append(containerGrid);
+    borderGrid.append(containerGrid);
     containerGrid.setAttribute("class", "containerGrid");
 
     //creates inputBox input under inputNumber div

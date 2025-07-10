@@ -18,7 +18,7 @@ input{
 }
 
 .container{
-    background: white;
+    background: rgb(240, 203, 203);
     width: 600px;
     height: 700px;
     border-radius: 10px;
@@ -29,6 +29,12 @@ input{
     gap: 10px;
     align-items: center;
 
+}
+
+.borderGrid{
+    border: 5px solid black;
+
+    
 }
 .containerGrid{
     box-sizing: border-box;
