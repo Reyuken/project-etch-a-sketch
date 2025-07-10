@@ -64,11 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
     container.append(titleEtch);
     titleEtch.setAttribute("class", "titleEtch");
     titleEtch.innerText = "Etch-A-Sketch Kunohay";
-    
+
     //creates inputNumber div under container div
     const inputNumber = document.createElement("div");
     container.append(inputNumber);
     inputNumber.setAttribute("class", "inputNumber");
+
+    //creates guide div
+    const guide = document.createElement("div");
+    container.append(guide);
+    guide.setAttribute("class", "guide");
+    guide.innerText = "(Move your mouse cursor below)";
   
     //creates borderGrid div under container div
     const borderGrid = document.createElement("div");
