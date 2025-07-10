@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+     //saves the user input into a variable and limits the input between 1 to 100
+    function saveInput() {
+        const input = Number(document.getElementById("inputSave").value);
+        if (input < inputBox.min || input > inputBox.max) {
+            alert("Please enter a number between 1 and 100.");
+        }
+        else {
+            return input;
+        }
+
+    }
+    
     function createGrid() {
         const count = saveInput();
         let square = count * count;
@@ -71,17 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     inputNumber.append(generateButton);
     generateButton.addEventListener("click", createGrid);
 
-    //saves the user input into a variable and limits the input between 1 to 100
-    function saveInput() {
-        const input = Number(document.getElementById("inputSave").value);
-        if (input < inputBox.min || input > inputBox.max) {
-            alert("Please enter a number between 1 and 100.");
-        }
-        else {
-            return input;
-        }
-
-    }
+   
 
 })
 
