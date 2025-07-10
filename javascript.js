@@ -56,13 +56,20 @@ document.addEventListener("DOMContentLoaded", () => {
         //for testing if opacity is working
         // return `rgb(0, 0, 0)`; 
     }
-
-    //creates inputNumber div under container div
+   
     const container = document.querySelector(".container");
+
+    //creates titleEtch div
+    const titleEtch = document.createElement("div");
+    container.append(titleEtch);
+    titleEtch.setAttribute("class", "titleEtch");
+    titleEtch.innerText = "Etch-A-Sketch Kunohay";
+    
+    //creates inputNumber div under container div
     const inputNumber = document.createElement("div");
     container.append(inputNumber);
     inputNumber.setAttribute("class", "inputNumber");
-
+  
     //creates borderGrid div under container div
     const borderGrid = document.createElement("div");
     container.append(borderGrid);
