@@ -1,16 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-    function createGrid(count) {
+    function createGrid() {
+        const count = saveInput();
         let square = count * count;
         let squareWidth = 0;
         squareWidth = Math.floor(500/count);
-        for (grid = 0; grid < square; grid++) {
-            const gridSquares = document.createElement("div");
-            gridSquares.setAttribute("id", "gridSquares");
-            containerGrid.append(gridSquares);
+        let runtime=0;
+        if (runtime<1){
+            for (grid = 0; grid < square; grid++) {
+                const gridSquares = document.createElement("div");
+                gridSquares.setAttribute("id", "gridSquares");
+                containerGrid.append(gridSquares);
 
-            gridSquares.style.width = squareWidth+"px";
-            gridSquares.style.height = squareWidth+"px";
-            gridSquares.addEventListener("mouseover",()=>gridSquares.style.backgroundColor = randomColor());
+                gridSquares.style.width = squareWidth+"px";
+                gridSquares.style.height = squareWidth+"px";
+                gridSquares.addEventListener("mouseover",()=>gridSquares.style.backgroundColor = randomColor());
+            }
+            return runtime++;
+        }
+        else{
+            return console.log("poopie");
         }
     }
 
@@ -33,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     containerGrid.setAttribute("class", "containerGrid");
 
     const inputBox = document.createElement("input");
-    inputBox.type = "text";
+    inputBox.type = "number";
     inputBox.min = 1;
     inputBox.max = 100;
     inputBox.id = "inputSave";
@@ -43,14 +51,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const generateButton = document.createElement("Button");
     generateButton.innerText = "Generate";
     inputNumber.append(generateButton);
-    generateButton.addEventListener("click",saveInput);
+    generateButton.addEventListener("click",createGrid);
 
     function saveInput(){
-        const input = document.getElementById("inputSave").value; 
-        return console.log(input);
+        const input = Number(document.getElementById("inputSave").value); 
+       if (input < inputBox.min || input > inputBox.max){
+        alert("Please enter a number between 1 and 100.");
+       }
+        else {
+            return input;
+        }
+
     }
 
-    createGrid(2);
+    // createGrid(2);
 
    
 
