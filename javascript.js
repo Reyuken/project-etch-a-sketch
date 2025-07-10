@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             gridSquares.style.width = squareWidth+"px";
             gridSquares.style.height = squareWidth+"px";
-            gridSquares.style.backgroundColor = randomColor();
-            
+            gridSquares.addEventListener("mouseover",()=>gridSquares.style.backgroundColor = randomColor());
         }
     }
+
 
     function randomColor(){
         let red = Math.floor(Math.random()*255);
@@ -38,12 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     containerGrid.setAttribute("class", "containerGrid");
 
 
-
-
-
-    createGrid(10);
-
-
+    createGrid(2);
 
 
 
