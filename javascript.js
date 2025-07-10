@@ -4,21 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
         let square = count * count;
         let squareWidth = 0;
         squareWidth = Math.floor(500/count);
-        let runtime=0;
-        if (runtime<1){
-            for (grid = 0; grid < square; grid++) {
-                const gridSquares = document.createElement("div");
-                gridSquares.setAttribute("id", "gridSquares");
-                containerGrid.append(gridSquares);
+        containerGrid.innerHTML = "";
+        for (grid = 0; grid < square; grid++) {
+            const gridSquares = document.createElement("div");
+            gridSquares.setAttribute("id", "gridSquares");
+            containerGrid.append(gridSquares);
 
-                gridSquares.style.width = squareWidth+"px";
-                gridSquares.style.height = squareWidth+"px";
-                gridSquares.addEventListener("mouseover",()=>gridSquares.style.backgroundColor = randomColor());
-            }
-            return runtime++;
-        }
-        else{
-            return console.log("poopie");
+            gridSquares.style.width = squareWidth+"px";
+            gridSquares.style.height = squareWidth+"px";
+            gridSquares.addEventListener("mouseover",()=>gridSquares.style.backgroundColor = randomColor());
         }
     }
 
